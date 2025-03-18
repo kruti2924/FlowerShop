@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+:root {
+    --blue: #3e2093;
+}
+
+        *{
+            margin:0px;
+            padding: 0px;
+            /* box-sizing: border-box; */
+            /* font-family: "Arial",sans-serif; */
+            text-decoration: none;
+        }
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header .logo {
+            font-size: 3rem;
+            color: #7984c9;
+            font-weight: bolder;
+            font-family: "Aclonica", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        header .navbar a {
+
+            padding: 3rem 3rem 3rem 3.5rem;
+            color: #666;
+        }
+
+        .navbar {
+            
+            gap: 0px;
+            font-size: 20px;
+        }
+
+        header .navbar a:hover {
+            color: var(--blue);
+            text-decoration: underline;
+            color: #3e2093;
+            cursor: pointer;
+        }
+
+        header .icons a {
+            font-size: 2.5rem;
+            color: #333;
+            margin-left: 1.5rem;
+        }
+
+        header .icons a:hover {
+            color: var(--blue);
+        }
+
+        header #toggler {
+            display: none;
+        }
+
+        header .fa-bars {
+            font-size: 3rem;
+            color: #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            border: .1rem solid rgba(0, 0, 0, .3);
+            display: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        body{
+            background-color: aliceblue;
+            margin-top:70px;
+            font-family: "Arial",sans-serif;
+        }
+        .help{
+            margin-top: 100px;
+
+        }
+
+        .help h1{
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 40px;
+            color:#3e2093;
+        }
+        .container{
+            width:80%;
+            margin:0px auto;
+            display: flex;
+            justify-content: center;
+        }
+        @keyframes cardAnimation{
+            0%{
+                opacity:0;
+                transform: translateY(20px);
+            }
+            100%{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+        .service{
+            text-align: center;
+            margin:20px;
+            background-color: rgb(238, 240, 243);
+            border-radius:8px;
+            padding: 30px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            animation: cardAnimation 0.5s ease forwards;
+            
+        }
+        
+        .service:hover{
+            transform: scale(0.98);
+            background-color: #fff;
+            
+            box-shadow: 0px 5px 10px 0px rgb(0,0,0,0.2);
+        }
+        .service img{
+            font-size: 48px;
+            color:#3e2093;
+
+        }
+        .service h2{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .service p{
+            font-size: 16px;
+            color:#666;
+            line-height: 1.4;
+        }
+        @media screen and (max-width:768px) {
+            .container{
+
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+
+            header {
+                padding: 2rem;
+            }
+
+            
+        }
+
+        @media (max-width: 768px) {
+
+            header .fa-bars {
+                display: block;
+
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #eee;
+                border-top: 1rem solid rgba(0, 0, 0, .1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+
+            header #toggler:checked~.navbar {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+            }
+
+
+            header .navbar a {
+                margin: 1.5rem;
+                padding: 1.5rem;
+                background-color: #fff;
+                /* border: 1rem solid rgba(0, 0, 0, .1); */
+
+                display: block;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">
+            Floral Paradise</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/contactus">Contact</a>
+            <a href="/help">Orders</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-shopping-cart"></a>
+
+        </div>
+    </header>
+    <section class="help">
+        <h1>Help</h1>
+        <div class="container">
+            <a href="/help/orderdisplay">
+            <div class="service">
+                <img src="myorder.jpg" alt="myorder">
+                <h2>My Order</h2> 
+                <p>Stay updated on your purchases and delivery status with just a click. Explore 'My Orders' now!"</p>
+            </div>
+        </a>
+        <a href="/help/orderdelete">
+            <div class="service">
+                <img src="cancelorder.jpg" alt="cancelorder">
+                <h2>Cancel Order</h2> 
+                <p>Need to cancel your order? Click to initiate the cancellation process hassle-free.</p>
+            </div>
+        </a>
+        </div>
+    </section>
+</body>
+</html>

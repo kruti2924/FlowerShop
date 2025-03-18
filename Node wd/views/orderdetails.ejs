@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #555;
+        }
+        .bill-details {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .product-details {
+            margin-top: 10px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .total {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Customer Details</h1>
+    <div class="bill-details">
+        <p><strong>Order ID:</strong> <%= order_id %></p>
+        <p><strong>Customer ID:</strong> <%= customer_id %></p>
+    </div>
+
+    <h2>Product</h2>
+    <div class="product-details">
+        <p><strong>Name:</strong> <%= product_name %></p>
+        <p><strong>Quantity:</strong> <%= quantity %></p>
+    </div>
+
+    <h2>Total Bill</h2>
+    <div class="total">
+        <p><strong>Total Price:</strong> <%= total_price %></p>
+    </div>
+    <h2><%= msg %></h2>
+</body>
+</html>

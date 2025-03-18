@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+:root {
+    --blue: #3e2093;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration:none ;
+}
+html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        header .logo {
+            font-size: 3rem;
+            color: #7984c9;
+            font-weight: bolder;
+            font-family: "Aclonica", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        header .navbar a {
+
+            padding: 3rem 3rem 3rem 3.5rem;
+            color: #666;
+        }
+
+        .navbar {
+            
+            gap: 0px;
+            font-size: 20px;
+        }
+
+        header .navbar a:hover {
+            color: var(--blue);
+            text-decoration: underline;
+            color: #3e2093;
+            cursor: pointer;
+        }
+
+        header .icons a {
+            font-size: 2.5rem;
+            color: #333;
+            margin-left: 1.5rem;
+        }
+
+        header .icons a:hover {
+            color: var(--blue);
+        }
+
+        header #toggler {
+            display: none;
+        }
+
+        header .fa-bars {
+            font-size: 3rem;
+            color: #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            border: .1rem solid rgba(0, 0, 0, .3);
+            display: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input[type="submit"] {
+            background-color: #3e2093;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6b6ba3;
+        }
+
+        @media (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+
+            header {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            header .fa-bars {
+                display: block;
+
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #eee;
+                border-top: 1rem solid rgba(0, 0, 0, .1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+
+            header #toggler:checked~.navbar {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+            }
+
+
+            header .navbar a {
+                margin: 1.5rem;
+                padding: 1.5rem;
+                background-color: #fff;
+                /* border: 1rem solid rgba(0, 0, 0, .1); */
+
+                display: block;
+            }
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">
+            Floral Paradise</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/contactus">Contact</a>
+            <a href="/help">Orders</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-shopping-cart"></a>
+
+        </div>
+    </header>
+    <div class="container">
+        <h1>Enter Order ID</h1>
+        <form action="/help/orderdisplay" method="post">
+            <label for="orderID">Order ID:</label>
+            <input type="text" id="orderID" name="orderID" required>
+            <input type="submit" value="View Details">
+        </form>
+    </div>
+</body>
+</html>
